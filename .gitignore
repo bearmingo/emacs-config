@@ -1,0 +1,9 @@
+# -*- mode: gitignore: -*-
+*~
+\#*\#
+
+ac-comphist.dat
+/auto-save-list/
+
+# elpa package
+/elpa/
