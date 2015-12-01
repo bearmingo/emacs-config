@@ -66,8 +66,6 @@
  ;; If there is more than one, they won't work right.
  )
 
-
-
 ;; ggtags package
 (add-hook 'c-model-common-hook
 	  (lambda ()

@@ -1,6 +1,0 @@
-[submodule "packages/yasnippet"]
-	path = packages/yasnippet
-	url = https://github.com/capitaomorte/yasnippet
-[submodule "packages/helm"]
-	path = packages/helm
-	url = https://github.com/emacs-helm/helm
