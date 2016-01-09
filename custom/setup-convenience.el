@@ -11,10 +11,17 @@
    try-complete-file-name		; Try to complete text as file name
    try-expand-all-abbrevs		; Try to expand word before point according to all abbrev tables.
    try-expand-list			; Try to complete the current line to an entire line in the buffer.
-   try-expand-line                      ; Try to complete the current line to an entire line in the buffer. 
+   try-expand-line                      ; Try to complete the current line to an entire line in the buffer.
    try-complete-lisp-symbol-partially   ; Try to complete as an Emacs Lisp symbol, as many characters as unique.
    try-complete-lisp-symbol)            ; Try to complete word as an Emacs Lisp symbol.
  )
+
+;; Highlight pairs of parentheses and other characters
+(show-paren-mode 1)
+;(setq show-parent-delay 0)
+
+;; auto close bracet insert
+(electric-pair-mode 1)
 
 ;; HL line
 (global-hl-line-mode)
