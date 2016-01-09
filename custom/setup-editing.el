@@ -15,7 +15,8 @@
 (set-language-environment "UTF-8")
 
 (prefer-coding-system 'utf-8)
-(prefer-coding-system 'cp936)
+(when (eq system-type 'windows-nt)
+  (prefer-coding-system 'cp936))
 
 (setq-default indent-tabs-mode nil)
 (delete-selection-mode)
