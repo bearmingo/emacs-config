@@ -6,6 +6,9 @@
 ;; path to load-path
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/plugins/"))
 
+;; load all subdirectories to load path
+(let ((default-directory "~/.emacs.d/plugins/"))
+  (normal-top-level-add-subdirs-to-load-path))
 
 ;; Initialized package manage, so I can use this to install plugins
 ;; ==============================================================
@@ -57,13 +60,11 @@
 (add-to-list 'ac-dictionary-directories
              "~/.emacs.d/elpa/auto-complete-20150618.1949/dict/")
 
-;; yasnippet
-;; -------------------------------
+;; yasnippet---------------------------------------------------------------
 (require 'yasnippet)
 (yas-global-mode t)
 
-;; markdown-mode.el
-;; -------------------------------
+;; markdown-mode.el--------------------------------------------------------
 (autoload 'markdown-mode "markdown-mode"
   "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
