@@ -44,3 +44,18 @@
 			    (whitespace-mode 1)))
 
 
+(defun newline-above-current()
+  "Add a line above current link vim O."
+  (interactive)
+  (progn (beginning-of-line)
+         (open-line 1)
+         (indent-according-to-mode)))
+
+(defun newline-next-current()
+  "Add a line next current link link vim o."
+  (interactive)
+  (progn (end-of-line)
+         (newline-and-indent)))
+
+(global-set-key (kbd "C-o") 'newline-next-current)
+(global-set-key (kbd "C-S-o") 'newline-above-current)
