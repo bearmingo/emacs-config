@@ -14,12 +14,19 @@
 ;; ==============================================================
 ;; Add packages archives
 (require 'package)
-(dolist (source '(
-                  ("marmalade" . "http://marmalade-repo.org/packages/")
-                  ;; ("elpa" . "http://tromey.com/elpa/")
-                  ("melpa" . "https://stable.melpa.org/packages/")
-                  ))
-  (add-to-list 'package-archives source t))
+;; There are some problems using the https location with Emacs on Windows.
+;; There is currently no know easy fix for this. You can still use MELPA
+;; by using the non-SSL location by replacing https with http
+(if (eq system-type 'windows-nt)
+    (add-to-list 'package-archives
+         '("mepla" . "http://melpa.org/packages/"))
+  (add-to-list 'package-archives
+           '("mepla" . "https://melpa.org/packages/")))
+
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-achives
+           '("gnu" . "http://elpa.gnu.org/packages")))
 
 ;; Startup pagckage manager.
 (package-initialize)
@@ -42,6 +49,7 @@
 (dolist (p required/package)
   (when (not (package-installed-p p))
     (package-install p)))
+
 
 ;; Load or initialize commen plugins
 ;; ===============================================================
