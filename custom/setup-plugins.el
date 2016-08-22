@@ -52,7 +52,7 @@
 
 
 ;; Load or initialize commen plugins
-;; ===============================================================
+;; =============================================================================
 
 ;; ggtags package
 (add-hook 'c-model-common-hook
@@ -68,13 +68,21 @@
 (add-to-list 'ac-dictionary-directories
              "~/.emacs.d/elpa/auto-complete-20150618.1949/dict/")
 
-;; yasnippet---------------------------------------------------------------
+
+;; yasnippet
+;; -----------------------------------------------------------------------------
 (require 'yasnippet)
 (yas-global-mode t)
 
-;; markdown-mode.el--------------------------------------------------------
+;; markdown-mode.el
+;; -----------------------------------------------------------------------------
 (autoload 'markdown-mode "markdown-mode"
   "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+;; gyp-model
+;; -----------------------------------------------------------------------------
+(require 'gyp)
+
