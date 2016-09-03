@@ -39,10 +39,10 @@
 (defvar required/package
   '(
     yasnippet                           ; template engine
-    auto-complete                       ; auto complete
+    company
+    company-jedi
     airline-themes                      ; themes
     ecb                                 ; navgation
-    auto-complete-clang                 ; c++
     markdown-mode
     ggtags
     ))
@@ -61,13 +61,6 @@
               (ggtabs-mode 1))))
 
 (add-hook 'dired-mode-hook 'ggtags-mode)
-
-
-;; Open auto complete default
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories
-             "~/.emacs.d/elpa/auto-complete-20150618.1949/dict/")
-
 
 ;; yasnippet
 ;; -----------------------------------------------------------------------------
