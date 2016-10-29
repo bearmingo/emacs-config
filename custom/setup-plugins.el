@@ -11,7 +11,7 @@
   (normal-top-level-add-subdirs-to-load-path))
 
 ;; Initialized package manage, so I can use this to install plugins
-;; ==============================================================
+;; ===================================================================
 ;; Add packages archives
 (require 'package)
 ;; There are some problems using the https location with Emacs on Windows.
@@ -52,7 +52,7 @@
 
 
 ;; Load or initialize commen plugins
-;; =============================================================================
+;; ===================================================================
 
 ;; ggtags package
 (add-hook 'c-model-common-hook
@@ -62,20 +62,16 @@
 
 (add-hook 'dired-mode-hook 'ggtags-mode)
 
-
-;; Open auto complete default
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories
-             "~/.emacs.d/elpa/auto-complete-20150618.1949/dict/")
-
+;; Use company-mode in all buffers
+(add-hook 'after-init-hook 'global-company-mode)
 
 ;; yasnippet
-;; -----------------------------------------------------------------------------
+;; -------------------------------------------------------------------
 (require 'yasnippet)
 (yas-global-mode t)
 
 ;; markdown-mode.el
-;; -----------------------------------------------------------------------------
+;; -------------------------------------------------------------------
 (autoload 'markdown-mode "markdown-mode"
   "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
@@ -83,6 +79,6 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 ;; gyp-model
-;; -----------------------------------------------------------------------------
+;; -------------------------------------------------------------------
 (require 'gyp)
 
