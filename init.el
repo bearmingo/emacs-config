@@ -1,4 +1,11 @@
 ;; Add your modules path
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (add-to-list 'load-path "~/.emacs.d/custom/")
 
 ;;
@@ -25,6 +32,9 @@
     ("beeb5ac6b65fcccfe434071d4624ff0308b5968bf2f0c01b567d212bcaf66054" default)))
  '(ecb-layout-window-sizes nil)
  '(ecb-options-version "2.40")
+ '(package-selected-packages
+   (quote
+    (company-web company-jedi company yasnippet web-mode smooth-scrolling pos-tip nurumacs markdown-mode groovy-mode ggtags fill-column-indicator ecb dockerfile-mode auto-complete-clang auto-complete-c-headers airline-themes)))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
@@ -36,13 +46,13 @@
 
 ;; English fonts
 (set-face-attribute
- 'default nil :font "Monaco 11")
+ 'default nil :font "Monaco 12")
  ;; Chinese fonts
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
   (set-fontset-font (frame-parameter nil 'font)
                     charset
                     (font-spec :family "Microsoft Yahei" :size 14)))
-                    
+
 ;; Load custom modules
 (require 'setup-plugins)
 (require 'setup-faces)
@@ -55,3 +65,4 @@
 (require 'setup-programming-cpp)
 (require 'setup-programming-python)
 (require 'setup-programming-chromium)
+(require 'setup-programming-django)

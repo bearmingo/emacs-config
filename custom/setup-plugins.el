@@ -39,10 +39,10 @@
 (defvar required/package
   '(
     yasnippet                           ; template engine
-    auto-complete                       ; auto complete
+    company
+    company-jedi
     airline-themes                      ; themes
     ecb                                 ; navgation
-    auto-complete-clang                 ; c++
     markdown-mode
     ggtags
     ))
